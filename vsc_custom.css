@@ -1,0 +1,90 @@
+/* tabs 标题 */
+.tabs-container > .tab.tab-border-bottom > .tab-border-top-container {
+  display: none !important;
+}
+.tabs-container > .tab.tab-border-bottom > .tab-border-bottom-container {
+  height: 2px !important;
+  border-radius: 1px !important;
+  transition: transform 0.2s ease-in-out !important;
+  transform: scaleX(0) !important;
+  opacity: 0 !important;
+  display: block !important;
+}
+
+/* 左侧功能栏的渐变线条 */
+.monaco-action-bar .action-item .active-item-indicator:before {
+  content: ' ' !important;
+  border: none !important;
+  width: 2px !important;
+  border-radius: 1px !important;
+  transition: transform 0.2s ease-in-out !important;
+  transform: scaleY(0) !important;
+  opacity: 0 !important;
+}
+
+.monaco-action-bar .action-item.checked .active-item-indicator:before,
+.tabs-container > .tab.active.tab-border-bottom > .tab-border-bottom-container,
+.tabs-container.test-body {
+  opacity: 1 !important;
+  transform: none !important;
+  background: radial-gradient(
+    circle at right bottom,
+    var(--color-gradient-5),
+    var(--color-gradient-6),
+    var(--color-gradient-7),
+    var(--color-gradient-8)
+  ) !important;
+}
+
+@keyframes rotate-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.monaco-workbench
+  .part.editor
+  > .content
+  .editor-group-container.active
+  > .title
+  .tabs-container
+  > .tab
+  > .tab-actions
+  .action-label.codicon:hover::before {
+  animation: rotate-reverse 1s linear infinite;
+}
+
+.composite-bar .actions-container > .action-item.icon.checked {
+  background: rgba(134, 134, 147, 0.1) !important;
+  /* border-radius: 0 8px 8px 0 !important; */
+  /* overflow: hidden !important; */
+}
+
+/* 左侧功能栏显示字数的气泡 */
+.monaco-workbench
+  .activitybar
+  > .content
+  :not(.monaco-menu)
+  > .monaco-action-bar
+  .badge
+  .badge-content {
+  background: radial-gradient(
+    circle at right bottom,
+    hsl(230, 65%, 50%),
+    hsl(290, 77%, 52%)
+  ) !important;
+}
+
+xterm-helper-textarea,
+.cursor.monaco-mouse-cursor-text {
+  transition: all 0.1s cubic-bezier(0.1, 0.79, 0.91, 0.07) !important;
+  border-radius: 4px !important;
+  background: radial-gradient(
+    circle at right bottom,
+    hsl(230, 65%, 50%),
+    hsl(290, 77%, 52%)
+  ) !important;
+}
